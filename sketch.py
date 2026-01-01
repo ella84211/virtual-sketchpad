@@ -145,6 +145,7 @@ def main():
         key = cv2.waitKey(1) & 0xFF
         if key == ord('f'): save_background(frame, sketch, mask)
         elif key == ord('s'): save_sketch(sketch, mask, h, w)
+        elif key == ord('c'): clear_sketch(sketch, mask)
         elif key == 27: break
 
     stream.release()
@@ -168,6 +169,7 @@ def print_instructions():
     Once you're done drawing, here are your options:
         Press 'f' to save the image as a .png that includes your background.
         Press 's' to save the image as a .png that does not include your background.
+        Press 'c' to clear the sketch.
         Press 'esc' to exit.
         Pressing 'f' or 's' will prompt you for an image name.
     """
@@ -241,6 +243,11 @@ def save_sketch(sketch, mask, h, w):
 
     status = cv2.imwrite(image, cv2.flip(rgba, 1))
     print(f"Sketch saved to {image}: {status}")
+
+
+def clear_sketch(sketch, mask):
+    sketch[:, :] = 0
+    mask[:, :] = 0
 
 
 def distance(p1, p2, w, h):

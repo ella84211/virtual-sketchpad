@@ -45,5 +45,6 @@ Make sure to keep your whole hand inside the frame!
 Once you're done drawing, here are your options:
 * Press 'f' to save the image as a .png that includes your background.
 * Press 's' to save the image as a .png that does not include your background.
+* Press 'c' to clear the sketch.
 * Press 'esc' to exit.
 * Pressing 'f' or 's' will prompt you for an image name.
